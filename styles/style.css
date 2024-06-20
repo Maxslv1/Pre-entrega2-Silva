@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "logo logo menu     quienessomos"
+        "logo logo locales  contactos";
+    font-size: 75px; 
+    text-align: center;
+}
+
+.logo {
+    grid-area: logo; 
+}
+.quienessomos {
+    grid-area: quienessomos; 
+}
+.locales {
+    grid-area: locales;
+}
+.contactos {
+    grid-area: contactos;
+}
+.menu {
+    grid-area: menu;
+}
+
+.container > div {
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "logo           logo"
+        "quienessomos   menu"
+        "locales        contactos";
+        font-size: 65px; 
+        text-align: center; 
+    }
+}
+
+@media screen and (max-width: 480px){
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container > * {
+        flex: 1;
+        font-size: 50px; 
+        text-align: center;
+    }
+    .logo {
+        flex: 1.5;
+    }
+}
+
+/* css del inicio */
+
+/* lo hecho con bootstrap */
+
+.hero {
+    background-image: url(../img/Background.jpg);
+    height: 10vh;
+
+}
+.card-img-top {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
